@@ -1,26 +1,47 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'app-main-component',
   templateUrl: './main-component.component.html',
   styleUrls: ['./main-component.component.css']
 })
 export class MainComponentComponent implements OnInit {
-  
     a:number=[];
     b:number=[];
     x:number=0;
     y:number=0;
-    winner:number=-2;
+    winner:number=0;
     flag:boolean=false;
     showResult:string;
+    counetr:number=0;
+    endGame:boolean=false;
+    classForUser1:string;
+    classForUser2:string;
+    startGameFlag:boolean=false;
   constructor() { }
-  onClickHandler(parametr){
-    this.flag ? this.flag=false : this.flag=true; 
-    this.flag ? this.user1(parametr) : this.user2(parametr);
-
+  startGame(e){
+    this.startGameFlag ? this.onClickHandler() : this.startGameFlag=true;
+    console.log(e)
   }
-  user1(parametr){
+  onClickHandler(parametr , e){
+    if (this.startGameFlag){
+      if (this.endGame ===false){
+        if (e.target.innerHTML == ""){
+          this.counetr++;
+          this.flag ? this.flag=false : this.flag=true; 
+          this.flag ? this.user1(parametr , e) : this.user2(parametr , e);
+          this.counetr==9 ? this.result() : "";
+        }
+      }
+      if (this.flag){
+        this.classForUser1="offClass";
+        this.classForUser2="onClass";
+      }else{
+        this.classForUser1="onClass";
+        this.classForUser2="offClass";
+      }
+    }
+  }
+  user1(parametr , e){
 
     const options = [
       [0, 1, 2],
@@ -45,9 +66,9 @@ export class MainComponentComponent implements OnInit {
         }
       }
     }
-console.log(this.winner)
+    e.target.innerHTML="<span style='color: red;'' >x</span>";
   }
-  user2(parametr){
+  user2(parametr , e){
 
     const options = [
       [0, 1, 2],
@@ -72,22 +93,24 @@ console.log(this.winner)
         }
       }
     }
-console.log(this.winner)
+// e.target.style.backgroundColor="yellow";
+e.target.innerHTML="<span style='color: blue;'' >o</span>";
   }
   result(){
     switch(this.winner){
       case 1:
-        this.showResult="user1 is Winner";
-        break;
-        case -1:
           this.showResult="user1 is Winner";
+          this.endGame=true;
           break;
-          default:
-            this.showResult="=";
+      case -1:
+          this.showResult="user2 is Winner";
+          this.endGame=true;
+          break;
+      case 0:
+          this.showResult="=";
+          this.endGame=true;
     }
   }
-
   ngOnInit(): void {
   }
-
 }
