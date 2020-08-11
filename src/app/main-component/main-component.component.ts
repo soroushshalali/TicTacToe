@@ -5,8 +5,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./main-component.component.css']
 })
 export class MainComponentComponent implements OnInit {
-    a:number=[];
-    b:number=[];
+    a:number[]=[];
+    b:number[]=[];
     x:number=0;
     y:number=0;
     winner:number=0;
@@ -17,10 +17,18 @@ export class MainComponentComponent implements OnInit {
     classForUser1:string;
     classForUser2:string;
     startGameFlag:boolean=false;
+    resetFlag:boolean=false;
   constructor() { }
   startGame(e){
-    this.startGameFlag ? this.onClickHandler() : this.startGameFlag=true;
-    console.log(e)
+    if (this.startGameFlag){
+      window.location.reload();
+    }else{
+      this.startGameFlag=true;
+      e.target.innerHTML="Reset";
+      this.classForUser1="onClass";
+      this.classForUser2="offClass";
+    }
+    console.log(e);
   }
   onClickHandler(parametr , e){
     if (this.startGameFlag){
@@ -42,7 +50,6 @@ export class MainComponentComponent implements OnInit {
     }
   }
   user1(parametr , e){
-
     const options = [
       [0, 1, 2],
       [3, 4, 5],
@@ -53,11 +60,11 @@ export class MainComponentComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6]
     ];
-    this.a[parametr]='x';
+    this.a[parametr]= 1;
     for (let i=0 ; i< 8 ; i++){
       this.x=0;
       for (let j=0 ; j<3 ; j++){
-        if (this.a[options[i][j]] == 'x' ){
+        if (this.a[options[i][j]] == 1 ){
           this.x++;
           if (this.x == 3){
             this.winner=1;
@@ -80,11 +87,11 @@ export class MainComponentComponent implements OnInit {
       [0, 4, 8],
       [2, 4, 6]
     ];
-    this.b[parametr]='o';
+    this.b[parametr]= 2;
     for (let i=0 ; i< 8 ; i++){
       this.y=0;
       for (let j=0 ; j<3 ; j++){
-        if (this.b[options[i][j]] == 'o' ){
+        if (this.b[options[i][j]] == 2 ){
           this.y++;
           if (this.y == 3){
             this.winner=-1;

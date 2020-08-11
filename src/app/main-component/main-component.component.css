@@ -30,8 +30,13 @@
     align-items: center;
     font-size: 50px;
 }
-.main-sec > div{
-    color: rgb(131, 107, 107);
+/* .main-sec > div{
+    opacity: 0.5;
+} */
+.clstest{
+    background-color: rgb(117, 117, 117);
+    border-radius: 100%;
+    padding: 10px;
 }
 .onClass{
     background-color: rgb(37, 221, 0);
@@ -45,7 +50,27 @@
     background-color: rgb(54, 54, 54);
     border-radius: 100%;
     padding: 20px;
-    color: white;
-    box-shadow: 0 0 10px white;
+    color: rgb(192, 192, 192);
+    box-shadow: 0 0 1px white;
     transition: 1s;
+}
+header{
+    background-color: black;
+    text-align: center;
+    padding: 4vh;
+}
+header > button{
+    border-radius: 4px;
+    height: 5vh;
+    width: 10%;
+    outline: none;
+    background-color: yellow;
+    border: none;
+    font-weight: 900;
+}
+.result-sec{
+    height: 5vh;
+    text-align: center;
+    background-color: black;
+    color: yellow;
 }
