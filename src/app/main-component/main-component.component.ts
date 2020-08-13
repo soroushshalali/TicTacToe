@@ -114,12 +114,12 @@ e.target.innerHTML="<span style='color: blue;'' >o</span>";
   result(){
     switch(this.winner){
       case 1:
-          this.showResult=`${this.user1Name} is Winner`;
+          this.showResult=`${this.user1Name} hat gewonnen.`;
           this.endGame=true;
           this.showResultElement();
           break;
       case -1:
-          this.showResult=`${this.user2Name} is Winner`;
+          this.showResult=`${this.user2Name} hat gewonnen.`;
           this.endGame=true;
           this.showResultElement();
           break;
@@ -156,28 +156,6 @@ e.target.innerHTML="<span style='color: blue;'' >o</span>";
     }
     this.startGame(e);
   }
-  // randomFunc(){
-  //   let flag=false;
-  //   let counetr=0;
-  //   let randomNumber=Math.floor(Math.random() * 1);
-  //   let limit=5+randomNumber;
-  //   setInterval(function(){
-  //     counetr++;
-  //     if (flag){
-  //       flag=false;
-  //       this.classForUser1="win-class";
-  //       this.classForUser2="los-class";
-  //       console.log(this.classForUser2);
-  //       console.log(this.classForUser1);
-  //     }else{
-  //       flag=true;
-  //       this.classForUser1="los-Class";
-  //       this.classForUser2="win-class";
-  //       console.log(this.classForUser2);
-  //       console.log(this.classForUser1);
-  //     }
-  //   }, 3000);
-  // }
   ngOnInit(): void {
   }
 }

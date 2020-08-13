@@ -1,20 +1,32 @@
 .show-result{
     color: rgb(255, 255, 255);
     position: absolute;
-    background-color: white;
     left: 30%;
     top: 30vh;
-    background-color: rgba(0, 0, 0, 0.767);
+    background-color: rgb(41, 41, 41);
     border: 3px solid white;
     border-radius: 10px;
     height: 0;
     width: 0;
     transition: 1s;
     opacity: 0;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    letter-spacing: 1px;
+    display: flex;
+    flex-direction: column;
+}
+.show-result > div{
+    margin-top: 15%;
+}
+.show-result > div > button{
+    border-radius: 4px;
+    height: 5vh;
+    width: 100px;
+    outline: none;
+    background-color: yellow;
+    border: none;
+    font-weight: 900;
 }
 .show-result-second{
     height: 40vh;
