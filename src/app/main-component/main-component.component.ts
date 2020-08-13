@@ -23,21 +23,22 @@ export class MainComponentComponent implements OnInit {
     classForShowResult:string;
   constructor() { }
   startGame(e){
+    console.log("check")
     if (this.startGameFlag){
       // window.location.reload();
       this.again(e);
     }else{
       this.startGameFlag=true;
       e.target.innerHTML="Reset";
-      this.usersName();
+      // this.usersName();
       this.classForUser1="onClass";
       this.classForUser2="offClass";
     }
   }
-  usersName(){
-    this.user1Name=prompt("Schreiben Sie Ihren Namen:");
-    this.user2Name=prompt("Schreiben Sie Ihren Namen:");
-  }
+  // usersName(){
+  //   this.user1Name=prompt("Schreiben Sie Ihren Namen:");
+  //   this.user2Name=prompt("Schreiben Sie Ihren Namen:");
+  // }
   onClickHandler(parametr , e){
     if (this.startGameFlag){
       if (this.endGame ===false){

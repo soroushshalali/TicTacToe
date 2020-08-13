@@ -6,6 +6,8 @@ import { MainComponentComponent } from './main-component/main-component.componen
 import { StartComponent } from './start/start.component';
 import { HeaderComponentrComponent } from './heade-componentr/heade-componentr.component';
 import { ButtonsComponent } from './buttons/buttons.component';
+import { SelectorComponent } from './selector/selector.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,11 +15,13 @@ import { ButtonsComponent } from './buttons/buttons.component';
     MainComponentComponent,
     StartComponent,
     HeaderComponentrComponent,
-    ButtonsComponent
+    ButtonsComponent,
+    SelectorComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
