@@ -1,41 +1,37 @@
+<div class="show-result" [class]="classForShowResult" >
+    <h1>{{showResult}}</h1>
+    <div>
+        <button (click)="again()" > >Again</button>
+    </div>
+</div>
 <main>
     <header>
+        <!-- <a routerLink="/start">Back</a> -->
         <button (click)="startGame($event)" >Start Game</button>
     </header>
 <section class="main-sec" >
-    <div class="clstest" [class]="classForUser1" ><h1>User1</h1></div>
+    <div class="clstest" [class]="classForUser1" ><h1>{{user1Name}}</h1></div>
     <section class="game-bord" >
-        <div id="0" (click)="onClickHandler(0,$event)" >
-
+        <div id="0" class="div-game-borad" (click)="onClickHandler(0,$event)" >
         </div>
-        <div id="1" (click)="onClickHandler(1,$event)" >
-    
+        <div id="1" class="div-game-borad" (click)="onClickHandler(1,$event)" >
         </div>
-        <div id="2" (click)="onClickHandler(2,$event)" >
-    
+        <div id="2" class="div-game-borad" (click)="onClickHandler(2,$event)" >
         </div>
-        <div id="3" (click)="onClickHandler(3,$event)" >
-    
+        <div id="3" class="div-game-borad" (click)="onClickHandler(3,$event)" >
         </div>
-        <div id="4" (click)="onClickHandler(4,$event)" >
-    
+        <div id="4" class="div-game-borad" (click)="onClickHandler(4,$event)" >
         </div>
-        <div id="5" (click)="onClickHandler(5,$event)" >
-    
+        <div id="5" class="div-game-borad" (click)="onClickHandler(5,$event)" >
         </div>
-        <div id="6" (click)="onClickHandler(6,$event)" >
-    
+        <div id="6" class="div-game-borad" (click)="onClickHandler(6,$event)" >
         </div>
-        <div id="7" (click)="onClickHandler(7,$event)" >
-    
+        <div id="7" class="div-game-borad" (click)="onClickHandler(7,$event)" >
         </div>
-        <div id="8" (click)="onClickHandler(8,$event)" >
-    
+        <div id="8" class="div-game-borad" (click)="onClickHandler(8,$event)" >
         </div>
     </section>
-    <div 
-    class="clstest" [class]="classForUser2" ><h1>User2</h1></div>
-    
+    <div class="clstest" [class]="classForUser2" ><h1>{{user2Name}}</h1></div>
 </section>
-<section class="result-sec" ><h1>{{showResult}}</h1></section>
+<section class="result-sec" ><h1></h1></section>
 </main>

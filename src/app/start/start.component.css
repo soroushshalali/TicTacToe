@@ -2,22 +2,23 @@
     margin: 0;
     padding: 0;
 }
-header{
-    background-color: black;
-    color: yellow;
-    height: 20vh;
+main > h2{
+    color: white;
     text-align: center;
 }
 main{
+    height: 80vh;
+}
+main > section{
     background-color: black;
     color: yellow;
-    height: 80vh;
     display: flex;
+    height: 90%;
     justify-content: space-between;
     align-items: center;
     padding: 0 10%;
 }
-main > article{
+main > section > article{
     width: 40%;
     text-align: center;
     border: 1px solid white;
@@ -29,11 +30,11 @@ main > article{
     border-radius: 8px;
     box-shadow: 0 0 4px white;
 }
-main > article > p{
+main > section > article > p{
     text-align: left;
     color: white;
 }
-main > div{
+main > section > div{
     width: 40%;
     text-align: center;
     border: 1px solid white;
@@ -46,10 +47,10 @@ main > div{
     border-radius: 8px;
     box-shadow: 0 0 4px white;
 }
-main > div > h1{
+main > section > div > h1{
     margin-bottom: 30px;
 }
-main > div > a{
+main > section > div > a{
     color: rgb(39, 39, 39);
     background-color: white;
     text-decoration: none;

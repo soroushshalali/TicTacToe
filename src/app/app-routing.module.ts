@@ -5,9 +5,9 @@ import { MainComponentComponent } from './main-component/main-component.componen
 import { StartComponent } from './start/start.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/start', pathMatch: 'full' },
-  // { path: 'start', component: StartComponent },
-  { path: 'main', component: MainComponentComponent }
+  { path: 'start', component: StartComponent },
+  { path: 'main', component: MainComponentComponent },
+  { path: '', redirectTo: '/start', pathMatch: 'full' }
 ];
 
 @NgModule({

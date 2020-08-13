@@ -1,12 +1,39 @@
+.show-result{
+    color: rgb(255, 255, 255);
+    position: absolute;
+    background-color: white;
+    left: 30%;
+    top: 30vh;
+    background-color: rgba(0, 0, 0, 0.767);
+    border: 3px solid white;
+    border-radius: 10px;
+    height: 0;
+    width: 0;
+    transition: 1s;
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.show-result-second{
+    height: 40vh;
+    opacity: 1;
+    width: 40%;
+}
 *{
     margin: 0;
     padding: 0;
+}
+main{
+    height: 80vh;
+    overflow: hidden;
 }
 .main-sec{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    height: 80vh;
+    height: 60%;
     background-color: rgb(0, 0, 0);
 }
 .game-bord{
@@ -15,7 +42,7 @@
     grid-template-rows: 33% 33% 33%;
     align-content: center;
     justify-content: center;
-    height: 50%;
+    height: 100%;
     width: 30%;
     background-image: url("src/assets/ticBack.png");
     background-size: contain;
@@ -30,9 +57,6 @@
     align-items: center;
     font-size: 50px;
 }
-/* .main-sec > div{
-    opacity: 0.5;
-} */
 .clstest{
     background-color: rgb(117, 117, 117);
     border-radius: 100%;
@@ -58,6 +82,8 @@ header{
     background-color: black;
     text-align: center;
     padding: 4vh;
+    display: flex;
+    justify-content: center;
 }
 header > button{
     border-radius: 4px;
@@ -68,9 +94,23 @@ header > button{
     border: none;
     font-weight: 900;
 }
+header > a{
+    color: white;
+    text-decoration: none;
+    border: 1px solid white;
+    padding: 10px 30px;
+    border-radius: 4px;
+    letter-spacing: 2px;
+}
 .result-sec{
     height: 5vh;
     text-align: center;
     background-color: black;
     color: yellow;
+}
+.win-class{
+    display: none;
+}
+.los-class{
+    display: block;
 }

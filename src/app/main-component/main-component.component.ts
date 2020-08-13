@@ -18,17 +18,25 @@ export class MainComponentComponent implements OnInit {
     classForUser2:string;
     startGameFlag:boolean=false;
     resetFlag:boolean=false;
+    user1Name:string;
+    user2Name:string;
+    classForShowResult:string;
   constructor() { }
   startGame(e){
     if (this.startGameFlag){
-      window.location.reload();
+      // window.location.reload();
+      this.again(e);
     }else{
       this.startGameFlag=true;
       e.target.innerHTML="Reset";
+      this.usersName();
       this.classForUser1="onClass";
       this.classForUser2="offClass";
     }
-    console.log(e);
+  }
+  usersName(){
+    this.user1Name=prompt("Schreiben Sie Ihren Namen:");
+    this.user2Name=prompt("Schreiben Sie Ihren Namen:");
   }
   onClickHandler(parametr , e){
     if (this.startGameFlag){
@@ -106,18 +114,70 @@ e.target.innerHTML="<span style='color: blue;'' >o</span>";
   result(){
     switch(this.winner){
       case 1:
-          this.showResult="user1 is Winner";
+          this.showResult=`${this.user1Name} is Winner`;
           this.endGame=true;
+          this.showResultElement();
           break;
       case -1:
-          this.showResult="user2 is Winner";
+          this.showResult=`${this.user2Name} is Winner`;
           this.endGame=true;
+          this.showResultElement();
           break;
       case 0:
-          this.showResult="=";
+          this.showResult=`${this.user2Name} = ${this.user2Name}`;
           this.endGame=true;
+          this.showResultElement();
+          break;
     }
   }
+  showResultElement(){
+    this.classForShowResult="show-result-second";
+  }
+  again(e){
+    this.a=[];
+    this.b=[];
+    this.x=0;
+    this.y=0;
+    this.winner=0;
+    this.flag=false;
+    this.showResult=null;
+    this.counetr=0;
+    this.endGame=false;
+    this.classForUser1=null;
+    this.classForUser2=null;
+    this.startGameFlag=false;
+    this.resetFlag=false;
+    this.user1Name=null;
+    this.user2Name=null;
+    this.classForShowResult=null;
+    let arrayDivs=Array.from(document.getElementsByClassName("div-game-borad"));
+    for (let i in arrayDivs){
+      arrayDivs[i].innerHTML=null;
+    }
+    this.startGame(e);
+  }
+  // randomFunc(){
+  //   let flag=false;
+  //   let counetr=0;
+  //   let randomNumber=Math.floor(Math.random() * 1);
+  //   let limit=5+randomNumber;
+  //   setInterval(function(){
+  //     counetr++;
+  //     if (flag){
+  //       flag=false;
+  //       this.classForUser1="win-class";
+  //       this.classForUser2="los-class";
+  //       console.log(this.classForUser2);
+  //       console.log(this.classForUser1);
+  //     }else{
+  //       flag=true;
+  //       this.classForUser1="los-Class";
+  //       this.classForUser2="win-class";
+  //       console.log(this.classForUser2);
+  //       console.log(this.classForUser1);
+  //     }
+  //   }, 3000);
+  // }
   ngOnInit(): void {
   }
 }
