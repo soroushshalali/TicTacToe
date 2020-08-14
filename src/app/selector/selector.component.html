@@ -1,6 +1,5 @@
 <main>
     <header>
-
     </header>
     <section>
         <div>
@@ -10,12 +9,10 @@
             <input (click)="radioBtnHandler($event)" name="users" id="4users" value='true' type="radio">
         </div>
         <section>
-            <input id="user-name1" type="text" placeholder="User 1" [(ngModel)]='interpolationUserName1' >
-            <input id="user-name2" type="text" placeholder="User 2" [(ngModel)]='interpolationUserName2' >
-            <input [style.display]="fourUsers ? 'unset' : 'none'" id="user-name3" type="text" placeholder="User 3" [(ngModel)]='interpolationUserName3' >
-            <input [style.display]="fourUsers ? 'unset' : 'none'" id="user-name4" type="text" placeholder="User 4" [(ngModel)]='interpolationUserName4' >
+            <input id="user-name1" type="text" placeholder="User 1" [(ngModel)]='usersNames.UserName1' >
+            <input id="user-name2" type="text" placeholder="User 2" [(ngModel)]='usersNames.UserName2' >
+            <input [style.display]="fourUsers ? 'unset' : 'none'" id="user-name3" type="text" placeholder="User 3" [(ngModel)]='usersNames.UserName3' >
+            <input [style.display]="fourUsers ? 'unset' : 'none'" id="user-name4" type="text" placeholder="User 4" [(ngModel)]='usersNames.UserName4' >
         </section>
-
-        <a (click)="onSendData()" routerLink="/main">Link</a>
     </section>
 </main>

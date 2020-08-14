@@ -8,6 +8,7 @@ import { HeaderComponentrComponent } from './heade-componentr/heade-componentr.c
 import { ButtonsComponent } from './buttons/buttons.component';
 import { SelectorComponent } from './selector/selector.component';
 import { FormsModule } from '@angular/forms';
+import { ConnectorComponent } from './connector/connector.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { FormsModule } from '@angular/forms';
     StartComponent,
     HeaderComponentrComponent,
     ButtonsComponent,
-    SelectorComponent
+    SelectorComponent,
+    ConnectorComponent,
   ],
   imports: [
     BrowserModule,

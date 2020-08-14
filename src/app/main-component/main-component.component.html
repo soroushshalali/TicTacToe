@@ -1,15 +1,31 @@
 <div class="show-result" [class]="classForShowResult" >
     <h1>{{showResult}}</h1>
 <div>
-        <button (click)="again($event)" >Again</button>
+        <button (click)="again()" >Again</button>
+        <button [class]="clsForNextBtn" (click)="nextMatch()" >Next Match</button>
 </div>
 </div>
+<section class="input-sec" >
+    <section>
+        <div>
+            <label for="2users" >2</label>
+            <input (click)="radioBtnHandler($event)" name="users" id="2users" value='false' type="radio" checked>
+            <label for="4users" >4</label>
+            <input (click)="radioBtnHandler($event)" name="users" id="4users" value='true' type="radio">
+        </div>
+        <section>
+            <input id="user-name1" type="text" placeholder="User 1" [(ngModel)]='usersNames[0]' [(ngModel)]='round2[0]' >
+            <input id="user-name2" type="text" placeholder="User 2" [(ngModel)]='usersNames[1]' [(ngModel)]='round2[1]' >
+            <input [style.display]="fourUsers ? 'unset' : 'none'" id="user-name3" type="text" placeholder="User 3" [(ngModel)]='usersNames[2]' >
+            <input [style.display]="fourUsers ? 'unset' : 'none'" id="user-name4" type="text" placeholder="User 4" [(ngModel)]='usersNames[3]' >
+        </section>
+    </section>
+</section>
 <main>
     <header>
-        <!-- <a routerLink="/start">Back</a> -->
-        <button (click)="startGame($event)" >Start Game</button>
+        <button [class]="displayForStarBtn" class="start-btn"  (click)="startGame()" >Start Game</button>
     </header>
-<section class="main-sec" >
+    <section class="main-sec" >
     <div class="clstest" [class]="classForUser1" ><h1>{{user1Name}}</h1></div>
     <section class="game-bord" >
         <div id="0" class="div-game-borad" (click)="onClickHandler(0,$event)" >
@@ -32,6 +48,5 @@
         </div>
     </section>
     <div class="clstest" [class]="classForUser2" ><h1>{{user2Name}}</h1></div>
-</section>
-<section class="result-sec" ><h1></h1></section>
+    </section>
 </main>
