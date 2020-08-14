@@ -45,6 +45,7 @@ export class MainComponentComponent implements OnInit {
     }
   }
   randomFunc() {
+    console.log(this.randomNumber)
     for (let i = 0; i < 3; i++) {
       let temp = Math.floor(Math.random() * 3);
       if (this.randomNumber.indexOf(temp) == -1) {
@@ -61,7 +62,8 @@ export class MainComponentComponent implements OnInit {
         this.user2Name = this.usersNames[this.randomNumber[1]];
       } else if (this.roundCounter == 1) {
         this.user1Name = this.usersNames[this.randomNumber[2]];
-        this.user2Name = this.usersNames[this.randomNumber[3]];
+        // this.user2Name = this.usersNames[this.randomNumber[3]];
+        this.user2Name = this.usersNames[3];
       }
       this.roundCounter++;
     } else {
@@ -156,7 +158,7 @@ export class MainComponentComponent implements OnInit {
         this.showResultElement();
         break;
       case 0:
-        this.showResult = `${this.user2Name} = ${this.user2Name}`;
+        this.showResult = `${this.user1Name} = ${this.user2Name}`;
         this.endGame = true;
         this.showResultElement();
         break;
@@ -168,27 +170,6 @@ export class MainComponentComponent implements OnInit {
   }
   again(){
     window.location.reload();
-  }
-  againtest() {
-    this.a = [];
-    this.b = [];
-    this.x = 0;
-    this.y = 0;
-    this.winner = 0;
-    this.flag = false;
-    this.showResult = null;
-    this.counetr = 0;
-    this.endGame = false;
-    this.classForUser1 = null;
-    this.classForUser2 = null;
-    this.startGameFlag = false;
-    this.resetFlag = false;
-    this.classForShowResult = null;
-    let arrayDivs = Array.from(document.getElementsByClassName("div-game-borad"));
-    for (let i in arrayDivs) {
-      arrayDivs[i].innerHTML = null;
-    }
-    this.startGame();
   }
   nextMatch() {
     if (this.roundCounter < 2) {
